@@ -13,15 +13,6 @@ body {
   background: #ffffff;
 }
 
-/* Header */
-.HeaderComponent {
-  position: absolute;
-  width: 1920px;
-  height: 168.23px;
-  left: 0px;
-  top: 0px;
-}
-
 /* Logo */
 .Logo {
   font-family: Cinzel;
@@ -29,14 +20,6 @@ body {
 }
 
 /* Nav Bar */
-.NavBarComponent {
-  position: absolute;
-  width: 1920px;
-  height: 101.23px;
-  left: 0px;
-  top: 67px;
-}
-
 .NavbarBG {
   background: #5c9aa1;
 }
@@ -45,4 +28,50 @@ body {
   font-family: FrankRuhlLibre;
   font-size: 18px;
   color: #ffffff !important;
+}
+
+/* Advertiment */
+.AdvertBG {
+  background-color: #47372e;
+}
+
+.Advert {
+  background-image: url(../IMG/2892217.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  position: relative;
+}
+
+.with-line {
+  display: block;
+}
+
+.with-line:before,
+.with-line:after {
+  content: "";
+  display: inline-block;
+  border-top: 8px solid #d9984e;
+  width: 1.75em;
+  vertical-align: middle;
+}
+
+.with-line:before {
+  margin-right: 0.5em;
+}
+
+.with-line:after {
+  margin-left: 0.5em;
+}
+
+/* Promotion */
+.PromotionBG {
+  background-color: black;
+}
+
+.Promotion {
+  background-image: url(../IMG/Mission\ text.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
