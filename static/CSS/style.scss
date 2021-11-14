@@ -67,11 +67,69 @@ body {
 /* Promotion */
 .PromotionBG {
   background-color: black;
+  margin-left: auto;
 }
 
-.Promotion {
-  background-image: url(../IMG/Mission\ text.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+.mission-review-component {
+  text-align: center;
+  padding: 1.5em;
+}
+
+.review-icon {
+  color: #f8dc93;
+  display: inline-flex;
+}
+
+.with-line-review {
+  display: block;
+}
+
+.with-line-review:before,
+.with-line-review:after {
+  content: "";
+  display: inline-block;
+  border-top: 2px solid #d9984e;
+  width: 2.3em;
+  vertical-align: middle;
+}
+
+.with-line-review:before {
+  margin-right: 0.5em;
+}
+
+.with-line-review:after {
+  margin-left: 0.5em;
+}
+
+.discount-coupon {
+  background-color: #b3604b;
+  width: 10em;
+  height: 5em;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.New-itemBG {
+  background-color: #d9984e;
+  margin-right: auto;
+}
+
+.new-item-component {
+  text-align: inherit;
+  padding: 1.5em;
+  padding-top: 2em;
+  padding-left: 2em;
+}
+
+/* Information */
+.is-invalid ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip,
+.was-validated :invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-tooltip {
+  display: block;
+}
+
+/* Footer */
+@at-root.footer {
+  background-color: #f2f2f2;
 }
