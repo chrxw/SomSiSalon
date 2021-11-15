@@ -1,5 +1,6 @@
 "use strict";
 
+// Information
 $("#email").on("input", function () {
   if ($(this).val() == "") {
     $("#submitEmail").prop("disabled", true);
