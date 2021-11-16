@@ -38,3 +38,11 @@ body {
 @at-root.footer {
   background-color: #f2f2f2;
 }
+
+/* Promocode */
+.is-invalid ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip,
+.was-validated :invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-tooltip {
+  display: block;
+}

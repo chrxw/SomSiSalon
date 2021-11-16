@@ -22,7 +22,7 @@ body {
 /* Nav Bar */
 .nav-bar-hover a:hover {
   background-color: #f0d192;
-  color: #47372e;
+  color: #47372e !important;
 }
 .NavbarBG {
   background: #5c9aa1;
@@ -136,4 +136,8 @@ body {
 /* Footer */
 @at-root.footer {
   background-color: #f2f2f2;
+}
+
+.w3-container {
+  background-color: #f0d192;
 }
