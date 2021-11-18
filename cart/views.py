@@ -1,5 +1,6 @@
-from django.db.models.aggregates import Count, Sum
 from django.shortcuts import render
+
+from django.db.models.aggregates import Count, Sum
 from django.http import HttpResponse
 
 from django.shortcuts import get_object_or_404
@@ -262,99 +263,3 @@ class NotifiesDetail(View):
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
-
-
-class BestServiceSeller(View):
-    def get(self, request):
-
-        appointment = Appointment.objects.order_by(
-            'service_id').values('service_id')
-
-        newAppointment = []
-        index = 0
-
-        for a in appointment:
-            service = Service.objects.values().get(
-                service_id=a['service_id'])
-            a['service_name'] = service['service_name']
-            a['service_cost'] = float(service['service_cost'])
-
-            if (index == 0):
-                newAppointment.append(a)
-            else:
-                appointment[index-1]['service_id'] != a['service_id']
-                newAppointment.append(a)
-
-            index += 1
-
-        # newAppointment = sorted(
-        #     newAppointment, key=lambda x: x(Count['service_id']), reverse=True)
-        appointment_json = json.dumps(newAppointment)
-
-        return HttpResponse(appointment_json, content_type='application/json')
-
-
-class BestProductSeller(View):
-    def get(self, request):
-
-        # with connection.cursor() as cursor:
-        #     cursor.execute('SELECT o.prod_qty as "Product quantity", p.prod_id as "Product ID" '
-        #                    ' , p.prod_name as "Product Name", p.prod_detail as "Product Detail" '
-        #                    ' , p.prod_description as "Product Description", p.prod_review as "Review" '
-        #                    ' , p.prod_price as "Product Price" '
-        #                    ' FROM "order" o JOIN product p '
-        #                    ' ON o.prod_id = p.prod_id')
-
-        #     row = dictfetchall(cursor)
-        #     column_name = [col[0] for col in cursor.description]
-
-        # data = dict()
-        # data['column_name'] = column_name
-        # data['data'] = row
-
-        # response = JsonResponse(data)
-        # response["Access-Control-Allow-Origin"] = "*"
-
-        # # return JsonResponse(data)
-
-        # return response
-        # return render(request, 'index.html', data)
-
-        order = Order.objects.order_by('prod_id').values('prod_id', 'prod_qty')
-
-        newOrder = []
-        index = 0
-
-        for o in order:
-            product = Product.objects.values().get(
-                prod_id=o['prod_id'])
-            o['prod_name'] = product['prod_name']
-            o['prod_price'] = float(product['prod_price'])
-            o['prod_detail'] = product['prod_detail']
-            o['prod_description'] = product['prod_description']
-            o['prod_review'] = product['prod_review']
-
-            if (index == 0):
-                newOrder.append(o)
-            else:
-                if (order[index-1]['prod_id'] != o['prod_id']):
-                    newOrder.append(o)
-                else:
-                    newOrder[-1]['prod_qty'] = newOrder[-1]['prod_qty'] + \
-                        o['prod_qty']
-            index += 1
-
-        newOrder = sorted(newOrder, key=lambda x: x['prod_qty'], reverse=True)
-        order_json = json.dumps(newOrder)
-
-        return HttpResponse(order_json, content_type='application/json')
-
-
-def dictfetchall(cursor):
-    "Return all rows from a cursor as a dict"
-    columns = [name[0].replace(" ", "_").lower()
-               for name in cursor.description]
-    return [
-        dict(zip(columns, row))
-        for row in cursor.fetchall()
-    ]

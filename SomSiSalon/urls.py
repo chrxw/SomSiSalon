@@ -21,4 +21,9 @@ from index import views as index_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_views.index, name='index'),
+
+    path('best_product_seller', index_views.BestProductSeller.as_view(),
+         name='BestProductSeller'),
+    path('best_service_seller', index_views.BestServiceSeller.as_view(),
+         name='BestServiceSeller')
 ]
