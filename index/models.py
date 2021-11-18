@@ -1,4 +1,3 @@
-from functools import _Descriptor
 from django.db import models
 
 # Create your models here.
@@ -116,7 +115,7 @@ class Service(models.Model):
 class Order(models.Model):
     order_no = models.CharField(max_length=10, primary_key=True)
     prod_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='prod_id')
+        Product, on_delete=models.CASCADE, db_column='prod_id')
     prod_qty = models.IntegerField()
     prod_price = models.FloatField(null=True, blank=True)
     order_date = models.DateField(null=True, blank=True)
@@ -136,11 +135,11 @@ class Appointment(models.Model):
     cus_id = models.ForeignKey(
         Customer, on_delete=models.CASCADE, db_column='cus_id')
     emp_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='emp_id')
+        Employee, on_delete=models.CASCADE, db_column='emp_id')
     appo_date = models.DateField(null=True, blank=True)
-    appo_time = models.TimeZoneFormField()
+    appo_time = models.DateField()
     service_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='service_id')
+        Service, on_delete=models.CASCADE, db_column='service_id')
 
     class Meta:
         db_table = "appointment"
@@ -156,13 +155,13 @@ class Receipt(models.Model):
     cus_id = models.ForeignKey(
         Customer, on_delete=models.CASCADE, db_column='cus_id')
     payment_code = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='payment_code')
+        PaymentMethod, on_delete=models.CASCADE, db_column='payment_code')
     receipt_date = models.DateField(null=True, blank=True)
     total_price = models.FloatField(null=True)
     service_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='service_id')
+        Service, on_delete=models.CASCADE, db_column='service_id')
     order_no = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='order_no')
+        Order, on_delete=models.CASCADE, db_column='order_no')
 
     class Meta:
         db_table = "receipt"
@@ -176,9 +175,9 @@ class Receipt(models.Model):
 class Promotion(models.Model):
     promo_id = models.CharField(max_length=10, primary_key=True)
     service_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='service_id')
+        Service, on_delete=models.CASCADE, db_column='service_id')
     prod_id = models.ForeignKey(
-        Customer, on_delete=models.CASCADE, db_column='prod_id')
+        Product, on_delete=models.CASCADE, db_column='prod_id')
     noti_promo = models.CharField(max_length=100)
 
     class Meta:
