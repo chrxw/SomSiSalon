@@ -20,17 +20,8 @@ form.addEventListener("submit", function (event) {
 mail_register();
 
 function mail_register() {
-  $("#submitEmail").click(function () {
-    var mail = $("#email").val().trim();
-
-    if (mail == "") {
-      $("#email").focus();
-      return false;
-    }
-
-    console.log(mail);
-
-    if ($("#email").val() == "") {
+  $("#submitEmail").on("click", function () {
+    if ($("#email").val() != "") {
       var token = $("[name=csrfmiddlewaretoken]").val();
       $.ajax({
         url: "/mail_register_for_infomation",
@@ -44,7 +35,7 @@ function mail_register() {
           if (data.error) {
             alert(data.error);
           } else {
-            $("#email").val(data.mail_register_for_infomation.mail);
+            alert("Register success");
           }
         }
       });
@@ -162,7 +153,7 @@ function get_best_service_sell() {
     dataType: "json",
     success: function success(data) {
       data.forEach(function (e) {
-        var _html = "\n          <div class=\"col-4 text-center\">\n              <div class=\"mb-2\" style=\"height: 250px; background-color: rgb(244 244 244); padding: 1em;\">\n                  <img class=\"service_img\" src=\"".concat(e.service_img, "\"\n                      style=\"max-width: 100%; max-height: 100%;\">\n              </div>\n              <h5 class=\"service-name\" style=\"font-weight: bold;\">").concat(e.service_name, "</h5>\n              <p class=\"service-price\">\u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48 ").concat(e.service_cost, " Bath</p>\n          </div>\n        ");
+        var _html = "\n          <div class=\"col-4 text-center best-service-box\">\n          <a href = \"#\" style=\"color:#000000; text-decoration: none;\">\n              <div class=\"mb-2\" style=\"height: 250px; background-color: rgb(244 244 244); padding: 1em;\">\n                  <img class=\"service_img\" src=\"".concat(e.service_img, "\"\n                      style=\"max-width: 100%; max-height: 100%;\">\n              </div>\n              <h5 class=\"service-name\" style=\"font-weight: bold;\">").concat(e.service_name, "</h5>\n              <p class=\"service-price\">\u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48 ").concat(e.service_cost, " Bath</p>\n          </a>\n          </div>\n        ");
 
         $("#bestServices").append(_html);
       });
@@ -179,7 +170,7 @@ function get_best_product_sell() {
     dataType: "json",
     success: function success(data) {
       data.forEach(function (e) {
-        var _html = "\n          <div class=\"col-4 text-center\">\n            <div class=\"mb-2\" style=\"height: 250px; background-color: rgb(244 244 244); padding: 1em;\">\n              <img class=\"product-img\" src=\"".concat(e.prod_img, "\"\n                style=\"max-width: 100%; max-height: 100%;\">\n            </div>\n            <h5 class=\"product-name\" style=\"font-weight: bold;\">").concat(e.prod_name, "</h5>\n            <h5 class=\"product-detail\">").concat(e.prod_detail, "</h5>\n            <p class=\"product-review\">").concat(e.prod_review, "</p>\n            <p class=\"product-price\">\u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48 ").concat(e.prod_price, " Bath</p>\n          </div>\n        ");
+        var _html = "\n          <div class=\"col-4 text-center best-product-box\">\n          <a href = \"#\" style=\"color:#000000; text-decoration: none;\">\n            <div class=\"mb-2\" style=\"height: 250px; background-color: rgb(244 244 244); padding: 1em;\">\n              <img class=\"product-img\" src=\"".concat(e.prod_img, "\"\n                style=\"max-width: 100%; max-height: 100%;\">\n            </div>\n            <h5 class=\"product-name\" style=\"font-weight: bold;\">").concat(e.prod_name, "</h5>\n            <h5 class=\"product-detail\">").concat(e.prod_detail, "</h5>\n            <p class=\"product-review\">").concat(e.prod_review, "</p>\n            <p class=\"product-price\">").concat(e.prod_price, " Bath</p>\n            </a>\n          </div>\n        ");
 
         $("#bestProduct").append(_html);
       });

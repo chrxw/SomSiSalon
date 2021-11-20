@@ -406,8 +406,6 @@ class MailRegister(View):
         if form.is_valid():
             mail_register_for_infomation = form.save()
 
-            data['mail'] = model_to_dict(mail_register_for_infomation)
-
         else:
             data['error'] = 'form not valid!'
 

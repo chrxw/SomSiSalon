@@ -23,18 +23,10 @@ form.addEventListener(
 );
 
 mail_register();
-
 function mail_register() {
-  $("#submitEmail").click(function () {
-    var mail = $("#email").val().trim();
-    if (mail == "") {
-      $("#email").focus();
-      return false;
-    }
-    console.log(mail);
-    if ($("#email").val() == "") {
+  $("#submitEmail").on("click", function () {
+    if ($("#email").val() != "") {
       var token = $("[name=csrfmiddlewaretoken]").val();
-
       $.ajax({
         url: "/mail_register_for_infomation",
         type: "post",
@@ -45,7 +37,7 @@ function mail_register() {
           if (data.error) {
             alert(data.error);
           } else {
-            $("#email").val(data.mail_register_for_infomation.mail);
+            alert("Register success");
           }
         },
       });
@@ -180,13 +172,15 @@ function get_best_service_sell() {
     success: function (data) {
       data.forEach((e) => {
         const _html = `
-          <div class="col-4 text-center">
+          <div class="col-4 text-center best-service-box">
+          <a href = "#" style="color:#000000; text-decoration: none;">
               <div class="mb-2" style="height: 250px; background-color: rgb(244 244 244); padding: 1em;">
                   <img class="service_img" src="${e.service_img}"
                       style="max-width: 100%; max-height: 100%;">
               </div>
               <h5 class="service-name" style="font-weight: bold;">${e.service_name}</h5>
               <p class="service-price">เริ่มต้นที่ ${e.service_cost} Bath</p>
+          </a>
           </div>
         `;
         $("#bestServices").append(_html);
@@ -205,7 +199,8 @@ function get_best_product_sell() {
     success: function (data) {
       data.forEach((e) => {
         const _html = `
-          <div class="col-4 text-center">
+          <div class="col-4 text-center best-product-box">
+          <a href = "#" style="color:#000000; text-decoration: none;">
             <div class="mb-2" style="height: 250px; background-color: rgb(244 244 244); padding: 1em;">
               <img class="product-img" src="${e.prod_img}"
                 style="max-width: 100%; max-height: 100%;">
@@ -213,7 +208,8 @@ function get_best_product_sell() {
             <h5 class="product-name" style="font-weight: bold;">${e.prod_name}</h5>
             <h5 class="product-detail">${e.prod_detail}</h5>
             <p class="product-review">${e.prod_review}</p>
-            <p class="product-price">เริ่มต้นที่ ${e.prod_price} Bath</p>
+            <p class="product-price">${e.prod_price} Bath</p>
+            </a>
           </div>
         `;
         $("#bestProduct").append(_html);

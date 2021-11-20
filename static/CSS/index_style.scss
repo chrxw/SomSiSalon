@@ -486,3 +486,16 @@ body {
 // .b2t-btn:focus {
 //   outline: none;
 // }
+
+/* Best Service */
+.best-service-box:hover {
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.best-product-box:hover {
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
