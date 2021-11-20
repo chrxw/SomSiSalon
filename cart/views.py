@@ -22,7 +22,7 @@ import json
 
 def index(request):
     data = {}
-    return render(request, 'index.html', data)
+    return render(request, 'cart.html', data)
 
 
 class CustomerList(View):
