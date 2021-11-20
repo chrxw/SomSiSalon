@@ -90,6 +90,7 @@ class Product(models.Model):
     prod_detail = models.JSONField(encoder=None, decoder=None)
     prod_description = models.JSONField(encoder=None, decoder=None)
     prod_review = models.JSONField(encoder=None, decoder=None)
+    prod_img = models.CharField(max_length=2000)
 
     class Meta:
         db_table = "product"
@@ -103,6 +104,7 @@ class Service(models.Model):
     service_id = models.CharField(max_length=10, primary_key=True)
     service_name = models.CharField(max_length=100)
     service_cost = models.FloatField(null=True, blank=True)
+    service_img = models.CharField(max_length=2000)
 
     class Meta:
         db_table = "service"

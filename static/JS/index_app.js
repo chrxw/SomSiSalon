@@ -22,6 +22,37 @@ form.addEventListener(
   false
 );
 
+mail_register();
+
+function mail_register() {
+  $("#submitEmail").click(function () {
+    var mail = $("#email").val().trim();
+    if (mail == "") {
+      $("#email").focus();
+      return false;
+    }
+    console.log(mail);
+    if ($("#email").val() == "") {
+      var token = $("[name=csrfmiddlewaretoken]").val();
+
+      $.ajax({
+        url: "/mail_register_for_infomation",
+        type: "post",
+        data: $("#infoForm").serialize(),
+        headers: { "X-CSRFToken": token },
+        dataType: "json",
+        success: function (data) {
+          if (data.error) {
+            alert(data.error);
+          } else {
+            $("#email").val(data.mail_register_for_infomation.mail);
+          }
+        },
+      });
+    }
+  });
+}
+
 // Chat Bot
 $(function () {
   var INDEX = 0;
@@ -138,3 +169,55 @@ $(function () {
     $(".chat-box").toggle("scale");
   });
 });
+
+get_best_service_sell();
+// Best Service Seller
+function get_best_service_sell() {
+  $.ajax({
+    url: "/best_service_seller",
+    type: "get",
+    dataType: "json",
+    success: function (data) {
+      data.forEach((e) => {
+        const _html = `
+          <div class="col-4 text-center">
+              <div class="mb-2" style="height: 250px; background-color: rgb(244 244 244); padding: 1em;">
+                  <img class="service_img" src="${e.service_img}"
+                      style="max-width: 100%; max-height: 100%;">
+              </div>
+              <h5 class="service-name" style="font-weight: bold;">${e.service_name}</h5>
+              <p class="service-price">เริ่มต้นที่ ${e.service_cost} Bath</p>
+          </div>
+        `;
+        $("#bestServices").append(_html);
+      });
+    },
+  });
+}
+
+get_best_product_sell();
+// Best Product Seller
+function get_best_product_sell() {
+  $.ajax({
+    url: "/best_product_seller",
+    type: "get",
+    dataType: "json",
+    success: function (data) {
+      data.forEach((e) => {
+        const _html = `
+          <div class="col-4 text-center">
+            <div class="mb-2" style="height: 250px; background-color: rgb(244 244 244); padding: 1em;">
+              <img class="product-img" src="${e.prod_img}"
+                style="max-width: 100%; max-height: 100%;">
+            </div>
+            <h5 class="product-name" style="font-weight: bold;">${e.prod_name}</h5>
+            <h5 class="product-detail">${e.prod_detail}</h5>
+            <p class="product-review">${e.prod_review}</p>
+            <p class="product-price">เริ่มต้นที่ ${e.prod_price} Bath</p>
+          </div>
+        `;
+        $("#bestProduct").append(_html);
+      });
+    },
+  });
+}

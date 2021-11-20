@@ -1,6 +1,7 @@
 from django.db.models.aggregates import Count, Sum
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 from django.shortcuts import get_object_or_404
 from django.views.generic import View
@@ -11,7 +12,6 @@ from django.utils.decorators import method_decorator
 from django.forms.models import model_to_dict
 from django.db.models import Max
 from django.db import connection
-from collections import Counter
 
 from index.models import *
 import json
@@ -264,6 +264,32 @@ class NotifiesDetail(View):
         return response
 
 
+class MailList(View):
+    def get(self, request):
+        mails = list(MailRegisterForInformation.objects.all().values())
+        data = dict()
+        data['mails'] = mails
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class MailDetail(View):
+    def get(self, request, pk):
+        mail = get_object_or_404(MailRegisterForInformation, pk=pk)
+        data = dict()
+        data['mails'] = model_to_dict(mail)
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class MailForm(forms.ModelForm):
+    class Meta:
+        model = MailRegisterForInformation
+        fields = '__all__'
+
+
 class BestServiceSeller(View):
     def get(self, request):
 
@@ -278,17 +304,22 @@ class BestServiceSeller(View):
                 service_id=a['service_id'])
             a['service_name'] = service['service_name']
             a['service_cost'] = float(service['service_cost'])
+            a['service_img'] = service['service_img']
 
             if (index == 0):
                 newAppointment.append(a)
+                newAppointment[-1]['count'] = 1
             else:
-                appointment[index-1]['service_id'] != a['service_id']
-                newAppointment.append(a)
+                if (appointment[index-1]['service_id'] != a['service_id']):
+                    newAppointment.append(a)
+                    newAppointment[-1]['count'] = 1
+                else:
+                    newAppointment[-1]['count'] += 1
 
             index += 1
 
-        # newAppointment = sorted(
-        #     newAppointment, key=lambda x: x(Count['service_id']), reverse=True)
+        newAppointment = sorted(
+            newAppointment, key=lambda x: x['count'], reverse=True)
         appointment_json = json.dumps(newAppointment)
 
         return HttpResponse(appointment_json, content_type='application/json')
@@ -333,6 +364,7 @@ class BestProductSeller(View):
             o['prod_detail'] = product['prod_detail']
             o['prod_description'] = product['prod_description']
             o['prod_review'] = product['prod_review']
+            o['prod_img'] = product['prod_img']
 
             if (index == 0):
                 newOrder.append(o)
@@ -350,11 +382,35 @@ class BestProductSeller(View):
         return HttpResponse(order_json, content_type='application/json')
 
 
-def dictfetchall(cursor):
-    "Return all rows from a cursor as a dict"
-    columns = [name[0].replace(" ", "_").lower()
-               for name in cursor.description]
-    return [
-        dict(zip(columns, row))
-        for row in cursor.fetchall()
-    ]
+# class MailRegisterForInfomation(View):
+#     def get_mail(request):
+
+#         if request.method == 'POST':
+#             form = MailRegisterForInformation(request.POST)
+#             if form.is_valid():
+#                 return HttpResponseRedirect()
+#         else:
+#             form = MailRegisterForInformation()
+
+#         return render(request, 'index.html', {'form': form})
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class MailRegister(View):
+
+    def post(self, request):
+        data = dict()
+        request.POST = request.POST.copy()
+
+        form = MailForm(request.POST)
+        if form.is_valid():
+            mail_register_for_infomation = form.save()
+
+            data['mail'] = model_to_dict(mail_register_for_infomation)
+
+        else:
+            data['error'] = 'form not valid!'
+
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response

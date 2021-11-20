@@ -10,11 +10,12 @@
 body {
   position: relative;
   background: #ffffff;
+  font-family: FrankRuhlLibre;
 }
 
 /* Logo */
 .Logo {
-  font-family: Cinzel;
+  font-family: Cinzel !important;
   color: #47372e;
 }
 

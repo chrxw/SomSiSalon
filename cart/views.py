@@ -14,7 +14,7 @@ from django.db.models import Max
 from django.db import connection
 from collections import Counter
 
-from index.models import *
+from cart.models import *
 import json
 
 

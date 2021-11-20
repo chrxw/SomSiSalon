@@ -25,5 +25,8 @@ urlpatterns = [
     path('best_product_seller', index_views.BestProductSeller.as_view(),
          name='BestProductSeller'),
     path('best_service_seller', index_views.BestServiceSeller.as_view(),
-         name='BestServiceSeller')
+         name='BestServiceSeller'),
+
+    path('mail_register_for_infomation', index_views.MailRegister.as_view(),
+         name='MailRegisterForInfomation'),
 ]
