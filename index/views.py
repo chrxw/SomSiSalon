@@ -382,19 +382,6 @@ class BestProductSeller(View):
         return HttpResponse(order_json, content_type='application/json')
 
 
-# class MailRegisterForInfomation(View):
-#     def get_mail(request):
-
-#         if request.method == 'POST':
-#             form = MailRegisterForInformation(request.POST)
-#             if form.is_valid():
-#                 return HttpResponseRedirect()
-#         else:
-#             form = MailRegisterForInformation()
-
-#         return render(request, 'index.html', {'form': form})
-
-
 @method_decorator(csrf_exempt, name='dispatch')
 class MailRegister(View):
 

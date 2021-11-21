@@ -19,11 +19,12 @@ from django.urls import path
 
 from index import views as index_views
 from cart import views as cart_views
-
+from delivery_detail import views as delivery_detail_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_views.index, name='index'),
     path('cart', cart_views.index, name='cart'),
+    path('delivery_detail', delivery_detail_views.index, name='delivery_detail'),
     # path('profile'),
 
     path('best_product_seller', index_views.BestProductSeller.as_view(),
