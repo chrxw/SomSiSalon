@@ -21,6 +21,11 @@ def index(request):
     return render(request, 'product.html', data)
 
 
+def product_index(request):
+    data = {}
+    return render(request, 'product detail.html', data)
+
+
 class CustomerList(View):
     def get(self, request):
         customers = list(Customer.objects.all().values())

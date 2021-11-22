@@ -200,7 +200,7 @@ function get_best_product_sell() {
       data.forEach((e) => {
         const _html = `
           <div class="col-4 text-center best-product-box">
-          <a href = "#" style="color:#000000; text-decoration: none;">
+          <a href = "product_detail" style="color:#000000; text-decoration: none;">
             <div class="mb-2" style="height: 250px; background-color: rgb(244 244 244); padding: 1em;">
               <img class="product-img" src="${e.prod_img}"
                 style="max-width: 100%; max-height: 100%;">

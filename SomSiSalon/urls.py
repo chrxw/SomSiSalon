@@ -59,5 +59,6 @@ urlpatterns = [
     path('mail_register_for_infomation', index_views.MailRegister.as_view(),
          name='MailRegisterForInfomation'),
 
-    #
+    # product
+    path('product_detail', product_views.product_index, name='product'),
 ]
