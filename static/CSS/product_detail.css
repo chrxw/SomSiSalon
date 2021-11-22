@@ -451,6 +451,20 @@ img.hover-shadow {
   clear: both;
 }
 
+.noti_badge {
+  position: absolute;
+  top: 2.5em;
+  right: 5.5em;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #F0D192;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 /* The bar container */
 .bar-containerRate {
   width: 100%;
@@ -535,3 +549,6 @@ img.hover-shadow {
             padding: 0px 0;
             font-size: 30px;
         }
+
+
+        
