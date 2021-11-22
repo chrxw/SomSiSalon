@@ -213,3 +213,17 @@ class MailRegisterForInformation(models.Model):
 
     def __str__(self):
         return self.mail
+
+
+class User(models.Model):
+    cus_id = models.CharField(max_length=10, primary_key=True)
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=20)
+    email = models.CharField(max_length=300)
+
+    class Meta:
+        db_table = "user"
+        managed = False
+
+    def __str__(self):
+        return self.cus_id

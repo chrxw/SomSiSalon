@@ -1,0 +1,209 @@
+body {
+    font-family: FrankRuhlLibre;
+    src: url(../fonts/FrankRuhlLibre-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: Cinzel;
+    src: url(../fonts/Cinzel-Regular.ttf);
+  }
+  @font-face {
+    font-family: FrankRuhlLibre;
+    src: url(../fonts/FrankRuhlLibre-Regular.ttf);
+  }
+  
+  /* Body */
+  body {
+    position: relative;
+    background: #ffffff;
+  }
+  
+  /* Header */
+  .HeaderComponent {
+    position: absolute;
+    width: 1920px;
+    height: 168.23px;
+    left: 0px;
+    top: 0px;
+  }
+  
+  /* Logo */
+  .Logo {
+    font-family: Cinzel;
+    color: #47372e;
+  }
+  
+  /* Nav Bar */
+  .NavBarComponent {
+    position: absolute;
+    width: 1920px;
+    height: 101.23px;
+    left: 0px;
+    top: 67px;
+  }
+  
+  .NavbarBG {
+    background: #5c9aa1;
+  }
+  
+  .nav-font-color {
+    font-family: FrankRuhlLibre;
+    font-size: 18px;
+    color: #ffffff !important;
+  }
+  
+  .containerCover {
+    display:grid;
+    grid-template-columns: 100%;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .containerDeliTab{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 1em;
+    grid-auto-rows: auto;
+    padding: 1.25em;
+    background-color: #F0D192;
+  }
+  
+  .HeadingProduct {
+    position: absolute;
+    top: 40%;
+    left: 75%;
+    font-size: 3vw;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
+  .SubHeadingProduct {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    font-size: 2vw;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
+  img.deli {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2fr;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  
+  .DeliveryText1{
+    position: absolute;
+    top: 66.25%;
+    right: 75%;
+    font-size: 1.3vw;
+    width: 200px;
+    height: 100px;
+  }
+  
+  .DeliveryText2{
+    position: absolute;
+    top: 66.25%;
+    right: 48%;
+    font-size: 1.3vw;
+    width: 200px;
+    height: 100px;
+  }
+  
+  .DeliveryText3{
+    position: absolute;
+    top: 66.25%;
+    right: 10%;
+    font-size: 1.3vw;
+    width: 400px;
+    height: 100px;
+  }
+  
+  .pic-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin-left: 9em;
+  }
+  
+  .btn {
+    position: relative;
+    top: 175%;
+    left: 46%;
+    background-color: #d9984e; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    font-style: FrankRuhlLibre;
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #AD793E;
+  }
+  
+  .account{
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+  
+  .account2{
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+  .account3{
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+  .account4{
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+  
+  .w3-container {
+    background-color: #f0d192;
+  }
+  
+  .time{
+    font-size: 16px;
+  }
+  
+  .box{
+    background-color:white;
+    padding: 20px;
+  }
+  
+  .Heading { grid-area: header; }
+  .service {grid-area: main;}
+  .service2 {grid-area: main2;}
+  .service3 {grid-area: main3;}
+  .bar{grid-area: bar;}
+          .grid-container {
+              display: grid;
+              grid-template-areas:
+                  'header header header header header header'
+                  'main main main main main main'
+                  'main2 main2 main2 main2 main2 main2'
+                  'main3 main3 main3 main3 main3 main3'
+                  'bar bar bar bar bar bar';
+              grid-gap: 20px;
+              background-color: white;
+              padding: 0px 0px;
+          }
+  
+          .grid-container > div {
+              background-color: rgba(white, 50, 85, 89);
+              text-align: center;
+              padding: 0px 0;
+              font-size: 30px;
+          }

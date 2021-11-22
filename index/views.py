@@ -284,6 +284,26 @@ class MailDetail(View):
         return response
 
 
+class UserList(View):
+    def get(self, request):
+        users = list(User.objects.all().values())
+        data = dict()
+        data['users'] = users
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class UserDetail(View):
+    def get(self, request, pk):
+        user = get_object_or_404(User, pk=pk)
+        data = dict()
+        data['users'] = model_to_dict(user)
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
 class MailForm(forms.ModelForm):
     class Meta:
         model = MailRegisterForInformation

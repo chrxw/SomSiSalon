@@ -68,22 +68,23 @@ body {
   border-radius: 5px;
   cursor: pointer;
   position: relative;
-  margin-bottom: 1.5em;
 }
 
-// .check {
-//   padding: 15px;
-//   border: 1px #bfbfbf solid;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   position: relative;
+.choose-delivery-box-click {
+  padding: 1px 15px 15px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 1em;
+}
 
-//   position: absolute;
-//   top: 15px;
-//   right: 15px;
-//   width: 20px;
-//   height: 20px;
-//   border-radius: 50%;
-//   border: 1pxsolid rgb(74, 144, 225);
-//   background-color: rgb(74, 144, 225);
-// }
+.Branch-select {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  padding: 15px;
+}
+
+.Branch-select:hover {
+  cursor: pointer;
+  border-color: #f0d192;
+}

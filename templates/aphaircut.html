@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+
+    <title>Appointment | SomSi Salon</title>
+    <link rel="icon" href="../static/IMG/SomSi_Title_Logo.png">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="somsi salon website">
+    <meta name="author" content="kanyarat">
+    <meta name="keywords" content="haircut haircolor spa nail">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="../../static/js/appointment.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Frank Ruhl Libre">
+    <style>
+        @font-face {
+            font-family: Cinzel;
+            src: url(../fonts/Cinzel-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: FrankRuhlLibre;
+            src: url(../fonts/FrankRuhlLibre-Regular.ttf);
+        }
+
+        /* Body */
+        body {
+            position: relative;
+            background: #ffffff;
+        }
+
+        /* Header */
+        .HeaderComponent {
+            position: absolute;
+            width: 1920px;
+            height: 168.23px;
+            left: 0px;
+            top: 0px;
+        }
+
+        /* Logo */
+        .Logo {
+            font-family: Cinzel;
+            color: #47372e;
+        }
+
+        /* Nav Bar */
+        .NavBarComponent {
+            position: absolute;
+            width: 1920px;
+            height: 101.23px;
+            left: 0px;
+            top: 67px;
+        }
+
+        .NavbarBG {
+            background: #5c9aa1;
+        }
+
+        .nav-font-color {
+            font-family: FrankRuhlLibre;
+            font-size: 18px;
+            color: #ffffff !important;
+        }
+
+        body {
+            font-family: Frank Ruhl Libre;
+        }
+
+        .account {
+
+            font-size: 14px;
+            transform: translate(-50%, -50%);
+            color: black;
+
+        }
+
+        .account2 {
+
+            font-size: 14px;
+            transform: translate(-50%, -50%);
+            color: black;
+
+        }
+
+        .account3 {
+
+            font-size: 14px;
+            transform: translate(-50%, -50%);
+            color: black;
+
+        }
+
+        .account4 {
+
+            font-size: 14px;
+            transform: translate(-50%, -50%);
+            color: black;
+
+        }
+
+        .w3-container {
+            background-color: #F0D192;
+            padding: 10px;
+        }
+
+        .time {
+            font-size: 16px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .vl {
+            border: solid #F0D192;
+            height: 0.01px;
+            margin-bottom: 0em;
+        }
+
+        .do {
+            font-size: 0.7em;
+            color: black;
+        }
+
+        .start {
+            font-size: 0.5em;
+            color: black;
+        }
+
+        .service {
+            font-size: 1.5em;
+            color: black;
+        }
+
+        .item-btn {
+            border-bottom: #D9984E;
+            border-color: #D9984E;
+            color: white;
+
+            background-color: #D9984E;
+            padding: 0.1em 0.2em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.5em;
+
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .item-btn:hover {
+            background-color: #F0D192;
+            color: black;
+        }
+
+        .item-btn:active {
+            background-color: #F0D192;
+            color: black;
+        }
+
+
+        .Heading {
+            grid-area: header;
+        }
+
+        .subhead {
+            grid-area: main;
+        }
+
+        .detail {
+            grid-area: main2;
+        }
+
+        .service3 {
+            grid-area: main3;
+        }
+
+        .bar {
+            grid-area: bar;
+        }
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'main main main main main main'
+                'main2 main2 main2 main2 main2 main2'
+                'main3 main3 main3 main3 main3 main3'
+                'bar bar bar bar bar bar';
+            grid-gap: 20px;
+            background-color: white;
+            padding: 0px 0px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(white, 50, 85, 89);
+            text-align: center;
+            padding: 0px 0;
+            font-size: 30px;
+        }
+    </style>
+    <title>somsi salon Appointment</title>
+</head>
+
+<body>
+    <!-- SomSi Logo -->
+    <div class="text-center">
+        <a href="index" style="text-decoration: none;">
+            <h1 class="Logo mb-0">SOMSI SALON</h1>
+        </a>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light NavbarBG">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item mx-2 nav-bar-hover">
+                        <a class="nav-link nav-font-color" href="index">Home</a>
+                    </li>
+                    <li class="nav-item mx-2 nav-bar-hover">
+                        <a class="nav-link nav-font-color" href="aboutus">About us</a>
+                    </li>
+                    <li class="nav-item mx-2 nav-bar-hover">
+                        <a class="nav-link nav-font-color" href="product">Product & Service</a>
+                    </li>
+                    <li class="nav-item mx-2 nav-bar-hover">
+                        <a class="nav-link nav-font-color" href="appointment">Appointment</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class=" position-absolute end-0">
+                <ul class="navbar-nav flex-row p-md-5">
+                    <li class="nav-item mx-2">
+                        <a href="cart">
+                            <span class="material-icons-outlined align-middle text-white">
+                                shopping_cart
+                            </span></a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="profile">
+                            <span class="material-icons-outlined align-middle text-white">person</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="grid-container">
+        <div class="Heading">
+            <div class="box "></div>
+            <div class="W-100">
+                <img src="../image/top.JPG" style="width:100%;">
+            </div>
+            <div class="pic">
+                <div class="do">
+                    <p><br>Do you want a makeover? Get a new you from our experiences!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="subhead">
+            <div class="box "></div>
+            <div class="container-fluid">
+                <div class="form-row align-items-center">
+                    <div class="col-sm-1 p-3"></div>
+                    <div class="col-sm-2 p-3">
+                        <div class="service" style=" text-align: left; margin-left: 1em;">
+                            <p id="name">Haircut</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3 p-3">
+                        <p style="margin-right: 1em; margin-top: -2em;">step 1 : Branch</p>
+                    </div>
+                    <div class="col-sm-6 p-3">
+                        <form id="infoForm" action='/' novalidate>
+                            <div>
+                                <button type "botton" class="button item-btn" id="submit" onclick="myFunction()"
+                                    style="margin-left: 1em;font-size: 1em;">Bang Mod </button>
+                                <button type "botton" class="button item-btn" id="submit" onclick="myFunction()"
+                                    style="margin-left: 1em;font-size: 1em;">Siam</button>
+                                <button type "botton" class="button item-btn" id="submit" onclick="myFunction()"
+                                    style="margin-left: 1em;font-size: 1em;">Icon Siam </button>
+                                <button type "botton" class="button item-btn" id="submit" onclick="myFunction()"
+                                    style="margin-left: 1em;font-size: 1em;">Ekkamai</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-0 p-3"></div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-4 p-3">
+                        <p style="margin-right: 0.5em;">step 2 : Time & Hairstylist</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 p-3"><label for="date" style="margin-left: 4em;font-size: 1em;">Date:</label>
+                    </div>
+                    <div class="col-sm-3 p-3">
+                        <input type='date' id='txt_tDate' name='date' class='form-control' required>
+                    </div>
+                    <div class="col-sm-3 p-3">
+
+                        <label for="time">Time:</label>
+                        <select id="time">
+                            <option value="10.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">10.00</option>
+                            <option value="11.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">11.00</option>
+                            <option value="12.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">12.00</option>
+                            <option value="13.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">13.00</option>
+                            <option value="14.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">14.00</option>
+                            <option value="15.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">15.00</option>
+                            <option value="16.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">16.00</option>
+                            <option value="17.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">17.00</option>
+                            <option value="18.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;">18.00</option>
+                            <option value="19.00"
+                                style="border-bottom: #F0D192;box-sizing: content-box;font-size: 0.8em;" selected>19.00
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 p-3">
+                        <botton type='botton' id="done" class="button item-btn"
+                            style="margin-left: -10em;font-size: 1em;">Done</botton>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <!--bottom bar-->
+        <div class="bar">
+            <div class="w3-container">
+                <div class="row">
+                    <div class="col-sm-12 p-3  "></div>
+                </div>
+                <div class="row">
+                    <div class="col p-3  "></div>
+                    <div class="col p-3  "></div>
+                    <div class="col  p-3 ">
+                        <div class="account">
+                            <img src="../image/ig.png" alt="Cover"
+                                style="width:35px; height:35px; color :#F0D192;text-align: left; margin-bottom: 0em; ">
+                            somsisalon.official
+                        </div>
+
+                    </div>
+                    <div class="col  p-3 ">
+                        <div class="account2">
+                            <img src="../image/fblogo.png" alt="Cover"
+                                style="width:35px; height:35px;color :#F0D192;text-align: left; margin-bottom: 0em; ">
+                            somsisalon.official
+                        </div>
+                    </div>
+
+                    <div class="col p-3 ">
+                        <div class="account3">
+                            <img src="../image/twlogo.png" alt="Cover"
+                                style="width:35px; height:35px;color :#F0D192;text-align: left; margin-bottom: 0em; ">
+                            somsisalon.official
+                        </div>
+                    </div>
+                    <div class="col  p-3 ">
+                        <div class="account4">
+                            <img src="../image/telogo.png" alt="Cover"
+                                style="width:35px; height:35px;color :#F0D192;text-align: left; margin-bottom: 0em; ">
+                            098-6149999
+                        </div>
+                    </div>
+                    <div class="col p-3  text-white"></div>
+                    <div class="time">WE ARE OPEN FORM WED-SUN 10.30-19.30 PM.</div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="margin-top: 2em; margin-bottom: 3em;">
+            <div class="row" style="height: 200px;">
+                <div class=" col-3" style="padding: 1em;">
+                    <h6>Shop</h6>
+                    <p><a style="color:#000000; text-decoration: none;" href="product">All Service & Product</a></p>
+                </div>
+                <div class=" col-3" style="padding: 1em; color:#000000;">
+                    <h6>Help</h6>
+                    <p><a style="color:#000000; text-decoration: none;" href="#">Q&A</a></p>
+                    <p><a style="color:#000000; text-decoration: none;" href="#">Contact Us</a></p>
+                </div>
+                <div class=" col-3" style="padding: 1em;">
+                    <h6>About Us</h6>
+                    <p><a style="color:#000000; text-decoration: none;" href="aboutus">About Us</a></p>
+                </div>
+                <div class=" col-3" style="padding: 1em;">
+                    <div class="container-fluid text-center">
+                        <p>EVERY WED-SUN <br>
+                            10.30-19.30 PM.</p>
+                        <p>© 2021 SOMSI SALON</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

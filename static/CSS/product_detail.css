@@ -1,0 +1,537 @@
+body {
+    font-family:serif
+  }
+  
+@font-face {
+  font-family: Cinzel;
+  src: url(../fonts/Cinzel-Regular.ttf);
+}
+@font-face {
+  font-family: FrankRuhlLibre;
+  src: url(../fonts/FrankRuhlLibre-Regular.ttf);
+}
+
+/* Body */
+body {
+  position: relative;
+  background: #ffffff;
+}
+
+/* Header */
+.HeaderComponent {
+  position: absolute;
+  width: 1920px;
+  height: 168.23px;
+  left: 0px;
+  top: 0px;
+}
+
+/* Logo */
+.Logo {
+  font-family: Cinzel;
+  color: #47372e;
+}
+
+/* Nav Bar */
+.NavBarComponent {
+  position: absolute;
+  width: 1920px;
+  height: 101.23px;
+  left: 0px;
+  top: 67px;
+}
+
+.NavbarBG {
+  background: #5c9aa1;
+}
+
+.nav-font-color {
+  font-family: FrankRuhlLibre;
+  font-size: 18px;
+  color: #ffffff !important;
+}
+
+.containerCover {
+  display:grid;
+  grid-template-columns: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.containerDeliTab{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 0.5em;
+  grid-auto-rows: auto;
+  padding: 1.25em;
+  background-color: #F0D192;
+}
+
+.HeadingProduct {
+  position: absolute;
+  top: 40%;
+  left: 75%;
+  font-size: 3vw;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.SubHeadingProduct {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  font-size: 2vw;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+img.deli {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 2fr;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+img.thumbnail {
+    border:1px solid #9E9E9E;
+}
+
+img.thumbnail:hover {
+    border:1px solid black;
+}
+
+img.prod1 {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+img.prod1:hover {
+    border:1px solid black;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+}
+
+.column {
+  float: inline-end;
+  width: 10%;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column2 {
+  float: left;
+  width: 33.33%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  opacity: 100%;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  font-size: 20px;
+  padding: 8px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  border:1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid black;
+  /*set the size of the result div:*/
+  width: 15em;
+  height: 15em;
+  position: absolute;
+  margin-left: 32.5em;
+}
+
+.btnZoom {
+  position: absolute;
+  left: 12.5em;
+  background-color: #d9984e; /* Yellow background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-style: FrankRuhlLibre;
+  padding: 8px 10px; /* Some padding */
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column3 {
+  float: left;
+  width: 50%;
+  padding: 2em;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.checked {
+  color: #d9984e;
+}
+
+.btnsize {
+  background-color: #f6e4bf;
+  border: none;
+  color: black;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.btnsize:hover {
+  background-color: #f6e4bf;
+  color: black;
+}
+
+.btnsize:focus {
+  background-color: #f0d192;
+  color: black;
+  border: 1px solid #d9984e;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #f0d192;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 85%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #d9984e;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  width: 85%;
+  background-color: #f6e4bf;
+}
+
+.DetailTable {
+  padding: 1em;
+  text-align: left;
+}
+
+/* Style buttons */
+.btnAddtoCart {
+  position: absolute;
+  top: 65em;
+  right: 10em;
+  background-color: #d9984e; /* Yellow background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  font-style: FrankRuhlLibre;
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* The Popup (background) */
+.modalPopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Popup Content/Box */
+.modal-content-Popup {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.closePopup {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closePopup:hover,
+.closePopup:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.headingRate {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.faRate {
+  font-size: 25px;
+}
+
+.checkedRate {
+  color: orange;
+}
+
+/* Three column layout */
+.sideRate {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middleRate {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.rightRate {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.rowRate:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-containerRate {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.barRate-5 {width: 60%; height: 18px; background-color: #d9984e; opacity: 100%;}
+.barRate-4 {width: 30%; height: 18px; background-color: #d9984e; opacity: 80%;}
+.barRate-3 {width: 10%; height: 18px; background-color: #d9984e; opacity: 60%;}
+.barRate-2 {width: 4%; height: 18px; background-color: #d9984e; opacity: 40%;}
+.barRate-1 {width: 15%; height: 18px; background-color: #d9984e; opacity: 20%;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .sideRate, .middleRate {
+    width: 100%;
+  }
+  .rightRate {
+    display: none;
+  }
+}
+
+.account{
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.account2{
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.account3{
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.account4{
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.w3-container {
+  background-color: #f0d192;
+}
+
+.time{
+  font-size: 16px;
+}
+
+.box{
+  background-color:white;
+  padding: 20px;
+}
+
+.Heading { grid-area: header; }
+.service {grid-area: main;}
+.service2 {grid-area: main2;}
+.service3 {grid-area: main3;}
+.bar{grid-area: bar;}
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'main main main main main main'
+                'main2 main2 main2 main2 main2 main2'
+                'main3 main3 main3 main3 main3 main3'
+                'bar bar bar bar bar bar';
+            grid-gap: 20px;
+            background-color: white;
+            padding: 0px 0px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(white, 50, 85, 89);
+            text-align: center;
+            padding: 0px 0;
+            font-size: 30px;
+        }

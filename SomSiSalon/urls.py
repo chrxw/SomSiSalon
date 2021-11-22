@@ -18,15 +18,35 @@ from django.contrib import admin
 from django.urls import path
 
 from index import views as index_views
+from aboutus import views as aboutus_views
+from service import views as service_views
+from product import views as product_views
+from appointment import views as appointment_views
 from cart import views as cart_views
-from delivery_detail import views as delivery_detail_views
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index_views.index, name='index'),
-    path('cart', cart_views.index, name='cart'),
-    path('delivery_detail', delivery_detail_views.index, name='delivery_detail'),
-    # path('profile'),
+from cusprofile import views as cusprofile_views
+from checkout import views as checkout_views
 
+
+urlpatterns = [
+
+    # admin path
+    path('admin/', admin.site.urls),
+
+    # index path
+    path('', index_views.index, name='index'),
+    path('index', index_views.index, name='index'),
+
+
+    # other page index
+    path('aboutus', aboutus_views.index, name='about_us'),
+    path('service', service_views.index, name='service'),
+    path('product', product_views.index, name='product'),
+    path('appointment', appointment_views.index, name='appointment'),
+    path('cart', cart_views.index, name='cart'),
+    path('profile', cusprofile_views.index, name='cusprofile'),
+    path('checkout/delivery_detail', checkout_views.index, name='checkout'),
+
+    # index
     path('best_product_seller', index_views.BestProductSeller.as_view(),
          name='BestProductSeller'),
     path('best_service_seller', index_views.BestServiceSeller.as_view(),
@@ -34,4 +54,6 @@ urlpatterns = [
 
     path('mail_register_for_infomation', index_views.MailRegister.as_view(),
          name='MailRegisterForInfomation'),
+
+    #
 ]

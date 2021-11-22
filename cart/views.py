@@ -263,3 +263,43 @@ class NotifiesDetail(View):
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
+
+
+class MailList(View):
+    def get(self, request):
+        mails = list(MailRegisterForInformation.objects.all().values())
+        data = dict()
+        data['mails'] = mails
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class MailDetail(View):
+    def get(self, request, pk):
+        mail = get_object_or_404(MailRegisterForInformation, pk=pk)
+        data = dict()
+        data['mails'] = model_to_dict(mail)
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class UserList(View):
+    def get(self, request):
+        users = list(User.objects.all().values())
+        data = dict()
+        data['users'] = users
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+
+
+class UserDetail(View):
+    def get(self, request, pk):
+        user = get_object_or_404(User, pk=pk)
+        data = dict()
+        data['users'] = model_to_dict(user)
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response

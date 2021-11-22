@@ -67,5 +67,23 @@ body {
   border-radius: 5px;
   cursor: pointer;
   position: relative;
-  margin-bottom: 1.5em;
+}
+
+.choose-delivery-box-click {
+  padding: 1px 15px 15px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 1em;
+}
+
+.Branch-select {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  padding: 15px;
+}
+
+.Branch-select:hover {
+  cursor: pointer;
+  border-color: #f0d192;
 }
