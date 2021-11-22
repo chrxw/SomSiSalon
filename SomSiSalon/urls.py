@@ -25,6 +25,8 @@ from appointment import views as appointment_views
 from cart import views as cart_views
 from cusprofile import views as cusprofile_views
 from checkout import views as checkout_views
+from signin import views as signin_views
+from signup import views as signup_views
 
 
 urlpatterns = [
@@ -45,6 +47,8 @@ urlpatterns = [
     path('cart', cart_views.index, name='cart'),
     path('profile', cusprofile_views.index, name='cusprofile'),
     path('checkout/delivery_detail', checkout_views.index, name='checkout'),
+    path('signin', signin_views.index, name='signin'),
+    path('signup', signup_views.index, name='signup'),
 
     # index
     path('best_product_seller', index_views.BestProductSeller.as_view(),

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}   
+body
+input{font-family: 'Frank Ruhl Libre', serif;
+      
+}
+/* Logo */
+.Logo {
+    font-family: Cinzel;
+    color: #47372e;
+  }
+  /* Nav Bar */
+.NavbarBG {
+    background: #5c9aa1;
+  }
+  
+.nav-font-color {
+    font-family: FrankRuhlLibre;
+    font-size: 18px;
+    color: #ffffff !important;
+}
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+}
+section
+{
+ position: relative;
+ width: 50%;
+ height: 100vh;
+ display: flex;
+ background-color: black;
+}
+section .imgBx
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ padding: 3rem;
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ margin-left: 7%;
+
+}
+aside .contenBx
+{
+ position: absolute;
+ top: 0;
+ right: 0;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ width: 75%;
+ height: 100%;
+ padding: 5rem
+}
+.formBx
+{
+    position: absolute;
+    height: 600px;
+    width: 450px;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-30%);
+    background-color: #D9984E;
+    border-radius: 10%;
+ 
+}
+aside .title
+{
+ color: #47372E;
+ font-weight: 550;
+ font-size: 1.5em;
+ text-transform: uppercase;
+ margin-top: 5%;
+ margin-bottom: 10px;
+ margin-left: 5%;
+ display: inline-block;
+ letter-spacing: 1px;
+}
+aside .inputBx
+{
+ margin-bottom: 10px;
+}
+aside .inputBx span
+{
+    color: #47372E;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-left: 5%;
+}
+aside .inputBx input
+{
+    max-width: 400px;
+    width: 100%;
+    height: 35px;
+    background-color: darkgray;
+    margin: 5px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 50%;
+    padding: 0 0.4rem;
+    position: relative;
+    margin-left: 5%;
+}
+aside .btn
+{
+    width: 400px;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    margin: 2.5px 0;
+    transition: all 0.5s;
+    margin-left: 5%;
+    background: #F0D192;
+    color: #47372E;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+aside .btn:hover
+{
+    background: #ffffff;
+}
+
+aside .contenBx .formBx p
+{
+    color: #47372E;
+    margin-left: 5%;
+}
+aside .contenBx .formBx p a
+{
+    color: #47372E;
+}
+aside .contenBx .formBx p a:hover
+{
+    color: #F0D192;
+}
+aside .forget a
+{
+    color: #47372E; 
+    margin-left: 68%;
+}
+aside .forget a:hover
+{
+    color: #F0D192; 
+}   
+aside .contenBx .formBx h3
+{
+    color: #47372E;
+    text-align: center;
+    margin: 5px 0 10px;
+    font-weight: 400;
+}
+aside .contenBx .formBx .sci
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside .contenBx .formBx .sci li
+{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #47372E;
+    border-radius: 50%;
+    margin: 2px 7px;
+    cursor: pointer;
+    
+}
+aside .contenBx .formBx .sci li:hover
+{
+    background: #F0D192;
+}

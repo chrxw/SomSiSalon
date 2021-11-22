@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="../static/CSS/jquery-ui.min.css" rel="stylesheet">
+    <link href="../static/CSS/style1.css" rel="stylesheet">
+    <title>SIGNUP</title>
+</head>  
+<body>
+     <!-- SomSi Logo -->
+     <div class="text-center">
+        <h1 class="Logo mb-0">SOMSI SALON</h1>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light NavbarBG">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item mx-2"><a class="nav-link nav-font-color" href="#">Home</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link nav-font-color" href="#">About us</a></li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link nav-font-color" href="#">Product & Service</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link nav-font-color" href="#">Appointment</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class=" position-absolute end-0">
+                <ul class="navbar-nav flex-row p-md-5">
+                    <li class="nav-item mx-2">
+                        <span class="material-icons-outlined align-middle text-white">
+                            shopping_cart
+                        </span>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <span class="material-icons-outlined align-middle text-white">person</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+<section>
+    <div class="imgBx">
+        <img src="../static/img/somsilogo.png" width="400">
+    </div>
+</section>
+<aside>
+    <div class ="contenBx">
+        <div class="formBx">
+            <h2 class="title">SIGNUP</h2>
+            <form action="/signup/" class="sign-up-from"method="post">
+                {% csrf_token %}
+                <div class="inputBx">
+                    <span>Username</span>
+                    <input type="text" id="username" name="username" placeholder="creat a username" required>
+                </div>
+                <div class="inputBx">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                </div>
+                <div class="inputBx">
+                    <span>Confirmed Password</span>
+                    <input type="password" id="cpsw" name="cpsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                </div>
+                <button id='btnSIGNUP' type="submit" class="btn solid">SIGNUP</button>
+    
+
+                <h3>Login with social media</h3>
+                <ul class="sci">
+                    <li><img src=../static/img/FB.png width="40"></li>
+                    <li><img src=../static/img/IG.png width="40"></li>
+                    <li><img src=../static/img/GG.png width="40"></li>
+                 </ul>
+                 <div class="inputBx">
+                    <p>Already a member? <a href="login">Login</a></p>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+    <script src="../static/JS/jquery.min.js"></script>
+    <script src="../static/JS/jquery-ui.min.js"></script>
+    <script src="../static/JS/app.js"></script>
+    <script src="../static/JS/signup.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->    
+
+</aside>
+</body>
+
+
+</html>

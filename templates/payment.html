@@ -80,47 +80,36 @@
             <div class="col-8" style="padding-right: 50px; padding-left: 20px;">
                 <div class="row">
 
-                    <!-- Customer Information -->
-                    <div class="col-12" style="padding-bottom: 0.75em; border-bottom: 1px #efeff4 solid;">
-                        <div>
-                            <h7>Charuwan somphong</h7>
-                            <p style="margin-bottom: 0 !important;">chrwan.ja@gmail.com</p>
-                            <p>n/a</p>
-
-                            <!-- Add Somsi Card for earn point -->
-                            <div>
-                                <form id="SomsiCardForm" action='/' novalidate>
-                                    <!-- {% csrf_token %} -->
-                                    <label for="SomsiCard" class="form-label">Earn The 1 Points (Optional)</label>
-                                    <div class="mb-3 d-flex">
-                                        <div class="w-50">
-                                            <input type="text" id="SomsiCard" name="SomsiCard" class="form-control"
-                                                value="Enter Mobile or Somsi Number" required>
-                                        </div>
-                                        <div>
-                                            <button id="submitSomsiCard" type="button" class="btn btn-dark"
-                                                style="margin-left: 20px;" disabled>ADD</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Choose delivery -->
+                    <!-- Choose payment -->
                     <div class="col-12 Choose-delivery">
+                        <label>Choose payment method</label>
+                        <div style="display: flex; flex-wrap: wrap;margin: -4px;">
+                            <!-- card -->
+                            <div style="padding-left: 0px; margin: 10px 0; border-radius: 4px 0 0 4px; width: 100%;">
+                                <div
+                                    style="min-height: 80px; flex-wrap: wrap; border: 1px solid #e4e4e4; border-radius:4px;">
+                                    <div
+                                        style="display: flex; justify-content:center; border-right: 1px solid #e4e4e4; width: 8.33333%">
+                                        <img src="../static/IMG/credit-card.png"
+                                            style="max-width: 75%; vertical-align: middle;">
+                                    </div>
+                                    <div style="flex-direction:column;">
 
-                        <!-- Home delivery -->
-                        <div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
                             <div class="choose-delivery-box">
-                                <!-- <div class="check">
 
-                                </div> -->
-
-                                <!-- <div class="form-check" style="position: absolute;">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                </div> -->
 
                                 <div>
                                     <h6>Home delivery</h6>
@@ -156,7 +145,7 @@
                             </div>
                         </div>
 
-                        <!-- Self pick -->
+                        <!-- Bank tranfer -->
                         <div>
                             <div class="choose-delivery-box">
                                 <div>

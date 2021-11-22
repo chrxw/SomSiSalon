@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
+
+body 
+input{
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 17px;
+    padding: 8px;    
+}
+/* Logo */
+.Logo {
+  font-family: Cinzel;
+  color: #47372e;
+}
+
+/* Nav Bar */
+.NavbarBG {
+  background: #5c9aa1;
+}
+
+.nav-font-color {
+  font-family: FrankRuhlLibre;
+  font-size: 18px;
+  color: #ffffff !important;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+
+
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #F0D192;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+
+}
+.w3-container {
+  background-color: #f0d192;
+}
+
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+.bar{grid-area: bar;}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'main main main main main main'
+        'main2 main2 main2 main2 main2 main2'
+        'main3 main3 main3 main3 main3 main3'
+        'bar bar bar bar bar bar';
+    grid-gap: 20px;
+    background-color: white;
+    padding: 0px 0px;
+}
+
+.grid-container > div {
+    background-color: rgba(white, 50, 85, 89);
+    text-align: center;
+    padding: 0px 0;
+    font-size: 30px;
+}
+  .w3-container{
+    background-color: #F0D192;
+    padding: 00px;
+  }
+  .time{
+    font-size: 16px;
+  }
+  .box{
+    background-color:white;
+    padding: 20px;
+  }
+  
+
+    .Heading { grid-area: header; }
+    .service {grid-area: main;}
+    .service2{grid-area: main2;}
+    .service3{grid-area: main3;}
+    .bar{grid-area: bar;}
+  
+    
+    
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'header header header header header header'
+            'main main main main main main'
+            'main2 main2 main2 main2 main2 main2'
+            'main3 main3 main3 main3 main3 main3'
+            'bar bar bar bar bar bar';
+        grid-gap: 20px;
+        background-color: white;
+        padding: 0px 0px;
+    }
+
+    .grid-container > div {
+        background-color: rgba(white, 50, 85, 89);
+        text-align: center;
+        padding: 0px 0;
+        font-size: 30px;
+    }
+    .w3-container {
+        background-color: #f0d192;
+      }
