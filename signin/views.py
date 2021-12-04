@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
+from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.views.generic import View
 from django.http import JsonResponse
@@ -9,6 +10,7 @@ from django import forms
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.forms.models import model_to_dict
+from django.db.models import Max
 
 from signin.models import *
 import json
@@ -299,3 +301,30 @@ class UserDetail(View):
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class signin(View):
+    def post(self, request):
+        data = dict()
+        if request.method=='POST':
+            username =request.POST ['username']
+            psw =request.POST ['psw']
+
+            if User.objects.filter(username=username):
+                messages.error(request,"username  exit")
+                return redirect('index')
+            
+            if User.objects.filter(password=psw):
+                messages.error(request,"password  exit")
+
+             
+            form = UserForm(request.POST)
+            print(form)
+            return redirect('index')
+    def get(self, request):
+        return render(request, 'login.html')

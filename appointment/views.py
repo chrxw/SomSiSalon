@@ -16,10 +16,21 @@ import json
 # Create your views here.
 
 
+def appointment(request):
+    data = {}
+    return render(request, 'aphaircut.html', data)
+
+def appem(request):
+    data = {}
+    return render(request, 'app_em.html', data)
+
+def appfinal(request):
+    data = {}
+    return render(request, 'app_final.html', data)
+
 def index(request):
     data = {}
     return render(request, 'appointmenthome.html', data)
-
 
 class CustomerList(View):
     def get(self, request):

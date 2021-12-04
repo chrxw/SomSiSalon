@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
+from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.views.generic import View
 from django.http import JsonResponse
@@ -9,8 +10,9 @@ from django import forms
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.forms.models import model_to_dict
+from django.db.models import Max
 
-from signup.models import *
+from signin.models import *
 import json
 
 
@@ -299,3 +301,62 @@ class UserDetail(View):
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+class signup(View):
+    def post(self, request):
+        data = dict()
+        request.POST = request.POST.copy()
+        if request.method=='POST':
+                
+            username =request.POST ['username']
+            email =request.POST ['email']
+            psw = request.POST['psw'] 
+            cpsw =request.POST['cpsw']
+      
+            if User.objects.filter(username=username):
+                messages.error(request,"username already exit")
+                return redirect('signin')
+            
+            if User.objects.filter(email=email):
+                messages.error(request,"email already exit")         
+            
+            if psw != cpsw:
+                messages.error(request,"password didn't match!")
+        
+            # data = dict()
+            # request.POST = request.POST.copy()
+        if User.objects.count() != 0:
+            cus_id_max = User.objects.aggregate(Max('cus_id'))[ 'cus_id__max']
+            next_cus_id = cus_id_max[0] + str(int(cus_id_max[1:5])+1)
+        else:
+            next_cus_id = "C00001"
+        request.POST['cus_id'] = next_cus_id
+        request.POST['email'] = request.POST['email']
+        request.POST['username'] = request.POST['username']
+        request.POST['psw'] = request.POST['psw']
+        print('**************************************************')
+        print(next_cus_id)
+        form = UserForm(request.POST)
+            # myuser = User.objects.create_user(username,email,psw)
+        print('**************************************************')
+        print(form)
+        print('**************************************************')
+        # Customer(cus_id=request.POST['cus_id']).save()
+        user=User(cus_id=request.POST['cus_id'],email=request.POST['email'],username=request.POST['username'],password=request.POST['psw'])
+        user.save()
+        
+        # if form.is_valid():
+        #     user=form.save()
+        # else:
+        #     data['error'] = 'form not valid!'
+        
+        response = JsonResponse(data)
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
+    def get(self, request):
+        return render(request, 'signup.html')

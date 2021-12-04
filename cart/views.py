@@ -24,7 +24,6 @@ def index(request):
     data = {}
     return render(request, 'cart.html', data)
 
-
 class CustomerList(View):
     def get(self, request):
         customers = list(Customer.objects.all().values())
@@ -303,3 +302,11 @@ class UserDetail(View):
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
+
+# class ProductOrder(View):
+#     def get(self, request):
+
+#         product = Product.objects.order_by(
+#             'prod_id').values('prod_id','prod_name','prod_price','prod_img')
+
+#         return HttpResponse(product, content_type='application/json')
